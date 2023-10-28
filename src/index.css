@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
+:root {
+  --clr-primary-100: hsl(0, 0%, 100%);
+  --clr-neutral-200: hsl(189, 41%, 97%);
+  --clr-neutral-300: hsl(185, 41%, 84%);
+  --clr-neutral-400: hsl(184, 14%, 56%);
+  --clr-neutral-500: hsl(186, 14%, 43%);
+  --clr-neutral-600: hsl(183, 100%, 15%);
+
+  --clr-primary-500: hsl(172, 67%, 45%);
+
+  --fw-bold: 700;
+
+  --fs-regular: 1.5rem;
+
+  --ff-default: 'Space Mono', monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: var(--clr-neutral-300);
+  font-family: var(--ff-default);
+}
+
+.app {
+  display: flex;
+  background-color: var(--clr-primary-100);
+  max-width: 56.25rem;
+  border-radius: 20px;
+  padding: 2.125rem;
+}
+
+.tipCal {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+.tipCal__bill {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.container {
+  position: relative;
+}
+
+.container img {
+  position: absolute;
+  top: 6px;
+  left: 10px;
+  height: 12px;
+  width: 8px;
+}
