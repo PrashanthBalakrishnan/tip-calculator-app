@@ -34,6 +34,18 @@ svg {
   max-width: 100%;
 }
 
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -49,18 +61,7 @@ main {
   max-width: 56.25rem;
   border-radius: 20px;
   padding: 2.125rem;
-}
-
-.tipCal {
-  display: flex;
-  flex-direction: column;
-  gap: 2.8rem;
-}
-
-.tipCal__bill {
-  display: flex;
-  flex-direction: column;
-  position: relative;
+  gap: 2.125rem;
 }
 
 .container {
@@ -69,8 +70,113 @@ main {
 
 .container img {
   position: absolute;
-  top: 6px;
-  left: 10px;
-  height: 12px;
-  width: 8px;
+  top: 35%;
+  left: 20px;
+  height: 16px;
+  width: 12px;
+}
+
+.tipCal {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+
+/* BILL */
+.tipCal__bill {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Input */
+
+.tipCal__bill--input {
+  width: 100%;
+  border: none;
+  outline: transparent;
+  border-radius: 5px;
+  padding: 15px 20px;
+  color: var(--clr-neutral-600);
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-regular);
+  text-align: right;
+  background-color: var(--clr-neutral-200);
+}
+.tipCal__bill--input:focus {
+  border: 2px solid var(--clr-primary-500);
+}
+
+/* Tip Item */
+
+.tipCal__tip {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 380px;
+}
+
+.tipCal__tip label {
+  width: 100%;
+}
+
+.tip__btn,
+.tipCal__tip input {
+  border: none;
+  width: 117px;
+  height: 45px;
+  text-align: center;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  background-color: var(--clr-neutral-600);
+  color: white;
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-bold);
+  cursor: pointer;
+}
+
+.tip__btn:hover {
+  background-color: var(--clr-primary-500);
+  color: var(--clr-neutral-600);
+}
+
+.active__btn {
+  background-color: var(--clr-primary-500);
+  color: var(--clr-neutral-600);
+}
+
+.tipCal__tip input {
+  background-color: var(--clr-neutral-200);
+  color: var(--clr-neutral-600);
+  outline: none;
+}
+
+.tipCal__tip input:focus,
+.tipCal__tip input:hover {
+  border: 2px solid var(--clr-primary-500);
+}
+
+/* Number of People */
+.tipCal__people--label {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Styles to show error when customer put 0 as number of people */
+.tipCal__people--label span {
+  color: #b63815;
+}
+
+/* Text style */
+.zeroError {
+  display: none;
+}
+
+/* Input Style */
+.red {
+  border: 2px solid #b63815;
+}
+
+.red:focus {
+  border: 2px solid #b63815;
 }
