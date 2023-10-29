@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap');
 :root {
-  --clr-primary-100: hsl(0, 0%, 100%);
+  --clr-neutral-100: hsl(0, 0%, 100%);
   --clr-neutral-200: hsl(189, 41%, 97%);
   --clr-neutral-300: hsl(185, 41%, 84%);
   --clr-neutral-400: hsl(184, 14%, 56%);
@@ -48,20 +48,42 @@ input[type='number'] {
 
 main {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
   background-color: var(--clr-neutral-300);
   font-family: var(--ff-default);
+  overflow: hidden;
 }
 
+.logo {
+  color: var(--clr-neutral-600);
+  font-size: 1.5rem;
+  padding: 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .logo {
+    margin-bottom: 80px;
+    padding: 0;
+  }
+}
 .app {
-  display: flex;
-  background-color: var(--clr-primary-100);
-  max-width: 56.25rem;
-  border-radius: 20px;
+  background-color: var(--clr-neutral-100);
+  border-radius: 20px 20px 0 0;
   padding: 2.125rem;
   gap: 2.125rem;
+  width: 100%;
+  justify-content: center;
+}
+
+@media (min-width: 600px) {
+  .app {
+    display: flex;
+    max-width: 900px;
+    border-radius: 20px;
+  }
 }
 
 .container {
@@ -179,4 +201,50 @@ main {
 
 .red:focus {
   border: 2px solid #b63815;
+}
+
+/* Amount Component */
+
+.amount {
+  background-color: var(--clr-neutral-600);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  border-radius: 15px;
+}
+
+.amount__val {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 100px;
+  color: var(--clr-neutral-100);
+  margin-bottom: 20px;
+}
+
+.amount__person {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.price {
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary-500);
+}
+
+.amount__btn {
+  border: none;
+  background-color: var(--clr-primary-500);
+  padding: 18px 0;
+  font-size: var(--fs-regular);
+  border-radius: 10px;
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-600);
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.amount__btn:hover {
+  background-color: var(--clr-neutral-300);
 }
