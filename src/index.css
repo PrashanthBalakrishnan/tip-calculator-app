@@ -45,16 +45,23 @@ input::-webkit-inner-spin-button {
 input[type='number'] {
   -moz-appearance: textfield;
 }
-
+body {
+  overflow: hidden;
+}
 main {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   background-color: var(--clr-neutral-300);
   font-family: var(--ff-default);
   overflow: hidden;
+}
+
+@media (min-width: 600px) {
+  main {
+    min-height: 100vh;
+  }
 }
 
 .logo {
@@ -73,7 +80,7 @@ main {
   background-color: var(--clr-neutral-100);
   border-radius: 20px 20px 0 0;
   padding: 2.125rem;
-  gap: 2.125rem;
+  gap: 3.125rem;
   width: 100%;
   justify-content: center;
 }
@@ -101,7 +108,14 @@ main {
 .tipCal {
   display: flex;
   flex-direction: column;
-  gap: 2.8rem;
+  gap: 1rem;
+}
+
+@media (min-width: 600px) {
+  .tipCal {
+    gap: 2.8rem;
+    width: 379px;
+  }
 }
 
 /* BILL */
@@ -118,15 +132,22 @@ main {
   border: none;
   outline: transparent;
   border-radius: 5px;
-  padding: 15px 20px;
+  padding: 10px 0;
   color: var(--clr-neutral-600);
   font-weight: var(--fw-bold);
   font-size: var(--fs-regular);
   text-align: right;
   background-color: var(--clr-neutral-200);
+  margin-bottom: 10px;
 }
 .tipCal__bill--input:focus {
   border: 2px solid var(--clr-primary-500);
+}
+
+@media (min-width: 600px) {
+  .tipCal__bill--input {
+    padding: 15px 20px;
+  }
 }
 
 /* Tip Item */
@@ -210,8 +231,13 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 40px;
   border-radius: 15px;
+  padding: 20px;
+}
+@media (min-width: 600px) {
+  .amount {
+    padding: 40px;
+  }
 }
 
 .amount__val {
@@ -221,6 +247,7 @@ main {
   gap: 100px;
   color: var(--clr-neutral-100);
   margin-bottom: 20px;
+  padding: 10px 0;
 }
 
 .amount__person {
@@ -228,17 +255,15 @@ main {
 }
 
 .price {
-  font-size: 2rem;
-  font-weight: var(--fw-bold);
   color: var(--clr-primary-500);
+  font-weight: var(--fw-bold);
 }
 
 .amount__btn {
   border: none;
   background-color: var(--clr-primary-500);
-  padding: 18px 0;
   font-size: var(--fs-regular);
-  border-radius: 10px;
+  border-radius: 8px;
   font-weight: var(--fw-bold);
   color: var(--clr-neutral-600);
   cursor: pointer;
@@ -247,4 +272,16 @@ main {
 
 .amount__btn:hover {
   background-color: var(--clr-neutral-300);
+}
+
+@media (min-width: 600px) {
+  .price {
+    font-size: 2rem;
+  }
+  .amount__btn {
+    padding: 18px 0;
+  }
+  .amount {
+    width: 379px;
+  }
 }
