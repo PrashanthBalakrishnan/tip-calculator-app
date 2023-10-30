@@ -9,7 +9,7 @@ import clsx from 'clsx'
 const TipCalculator = () => {
   const [bill, setBill] = useState('')
   const [tip, setTip] = useState(data[0].tipPercentage)
-  const [people, setPeople] = useState('')
+  const [people, setPeople] = useState('1')
   console.log(tip, bill, people)
 
   const tipAmount = Number(bill) * tip
@@ -23,7 +23,7 @@ const TipCalculator = () => {
   const handleReset = () => {
     setBill('')
     setTip(data[0].tipPercentage)
-    setPeople('')
+    setPeople('1')
   }
   return (
     <div className="app">
@@ -72,6 +72,7 @@ const TipCalculator = () => {
               className={clsx('tipCal__bill--input', people === '0' && 'red')}
               type="number"
               value={people}
+              placeholder="0"
               onChange={(e) => setPeople(e.target.value)}
             />
           </div>
